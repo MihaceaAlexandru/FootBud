@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lobbies",
+  "info": {
+    "singularName": "lobby",
+    "pluralName": "lobbies",
+    "displayName": "Lobby"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Titlu": {
+      "type": "string"
+    },
+    "Data": {
+      "type": "date"
+    },
+    "Ora": {
+      "type": "time"
+    },
+    "Locatia": {
+      "type": "string"
+    },
+    "NumarJucatori": {
+      "type": "integer"
+    },
+    "profils": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::profil.profil",
+      "mappedBy": "lobby"
+    }
+  }
+}
