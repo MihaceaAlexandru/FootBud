@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@artcoded/strapi-plugin-github-projects": "^1.0.5"
+  }
+}
