@@ -7,7 +7,9 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import {Auth0Provider} from 'react-native-auth0'; 
+import LogInPage from './Components/LogInPage';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -28,7 +30,7 @@ import {
 
 /* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
  * LTI update could not be added via codemod */
-const Section = ({children, title}): Node => {
+const Section = ({children, title}) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
@@ -54,7 +56,7 @@ const Section = ({children, title}): Node => {
   );
 };
 
-const App: () => Node = () => {
+const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
@@ -62,6 +64,7 @@ const App: () => Node = () => {
   };
 
   return (
+    <Auth0Provider domain={"dev-4k2uv2aw.us.auth0.com"} clientId={"vET0Toex0cObbEirARKjdRu2UFaasO5U"}>
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
         barStyle={isDarkMode ? 'light-content' : 'dark-content'}
@@ -70,12 +73,12 @@ const App: () => Node = () => {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <Header />
+       
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
           }}>
-          <Section title="Step One">
+          {/* <Section title="Step One">
             Edit <Text style={styles.highlight}>App.js</Text> to change this
             screen and then come back to see your edits.
           </Section>
@@ -88,10 +91,12 @@ const App: () => Node = () => {
           <Section title="Learn More">
             Read the docs to discover what to do next:
           </Section>
-          <LearnMoreLinks />
+          <LearnMoreLinks /> */}
+          <LogInPage/>
         </View>
       </ScrollView>
     </SafeAreaView>
+    </Auth0Provider>
   );
 };
 
