@@ -6,6 +6,8 @@ PODS:
     - JWTDecode (~> 3.0)
     - SimpleKeychain (~> 1.0)
   - boost (1.76.0)
+  - BVLinearGradient (2.6.2):
+    - React-Core
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
   - FBLazyVector (0.70.2)
@@ -309,6 +311,17 @@ PODS:
   - React-jsinspector (0.70.2)
   - React-logger (0.70.2):
     - glog
+  - react-native-safe-area-context (4.4.1):
+    - RCT-Folly
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - ReactCommon/turbomodule/core
+  - react-native-video (5.2.1):
+    - React-Core
+    - react-native-video/Video (= 5.2.1)
+  - react-native-video/Video (5.2.1):
+    - React-Core
   - React-perflogger (0.70.2)
   - React-RCTActionSheet (0.70.2):
     - React-Core/RCTActionSheetHeaders (= 0.70.2)
@@ -375,6 +388,9 @@ PODS:
     - React-jsi (= 0.70.2)
     - React-logger (= 0.70.2)
     - React-perflogger (= 0.70.2)
+  - RNScreens (3.18.1):
+    - React-Core
+    - React-RCTImage
   - SimpleKeychain (1.0.1)
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
@@ -384,6 +400,7 @@ PODS:
 DEPENDENCIES:
   - A0Auth0 (from `../node_modules/react-native-auth0`)
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
+  - BVLinearGradient (from `../node_modules/react-native-linear-gradient`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
@@ -429,6 +446,8 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
+  - react-native-video (from `../node_modules/react-native-video`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -441,6 +460,7 @@ DEPENDENCIES:
   - React-RCTVibration (from `../node_modules/react-native/Libraries/Vibration`)
   - React-runtimeexecutor (from `../node_modules/react-native/ReactCommon/runtimeexecutor`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
+  - RNScreens (from `../node_modules/react-native-screens`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -469,6 +489,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-auth0"
   boost:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
+  BVLinearGradient:
+    :path: "../node_modules/react-native-linear-gradient"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
   FBLazyVector:
@@ -509,6 +531,10 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-safe-area-context:
+    :path: "../node_modules/react-native-safe-area-context"
+  react-native-video:
+    :path: "../node_modules/react-native-video"
   React-perflogger:
     :path: "../node_modules/react-native/ReactCommon/reactperflogger"
   React-RCTActionSheet:
@@ -533,6 +559,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/runtimeexecutor"
   ReactCommon:
     :path: "../node_modules/react-native/ReactCommon"
+  RNScreens:
+    :path: "../node_modules/react-native-screens"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -540,6 +568,7 @@ SPEC CHECKSUMS:
   A0Auth0: c096a6c55fc53657cd809049a3e4eec404b8084a
   Auth0: 910a23b611b7f1c2978fca3ac7579898f8524b0d
   boost: a7c83b31436843459a1961bfd74b96033dc77234
+  BVLinearGradient: 34a999fda29036898a09c6a6b728b0b4189e1a44
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   FBLazyVector: 0507edc21c06f1650c591f0981c846445469373b
@@ -574,6 +603,8 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 53bd208e5c27939c6e6365528393445a596a9a2b
   React-jsinspector: 26c42646ab0bb69e29e837e23754fe7121eeaf94
   React-logger: 1bfd109a0ffa4c0989bbfac0c2d8c4abe4637faa
+  react-native-safe-area-context: ec0d85aca8110dae9327430a9541fec165352dab
+  react-native-video: 79a186e378d327b6c08bc3982c17ef455c6bd75c
   React-perflogger: 6009895616a455781293950bbd63d53cfc7ffbc5
   React-RCTActionSheet: 5e90aa5712af18bfc86c2c6d97d4dbe0e5451c1d
   React-RCTAnimation: 50c44d6501f8bfb2fe885e544501f8798b4ff3d6
@@ -586,6 +617,7 @@ SPEC CHECKSUMS:
   React-RCTVibration: 89e2cbea456ac5ec623943661d00e4dc45fe74b9
   React-runtimeexecutor: 80065f60af4f4b05603661070c8622bb3740bf16
   ReactCommon: 1209130f460e4aa9d255ddc75fa0a827ebf93dfb
+  RNScreens: 1b7bb502dac62cc4cf01b94bea591c8da275132f
   SimpleKeychain: 130211269f88f038d7dc5254cf0b1b9ce978c398
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 043f8eb97345d0171f27fead4d1849cacf0472a5
