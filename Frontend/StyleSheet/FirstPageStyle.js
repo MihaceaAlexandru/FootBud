@@ -95,6 +95,16 @@ const style = StyleSheet.create({
           borderBottomColor:'#1e2724',
           borderRightColor:'#1e2724',
           bottom:60
+    },
+    logoContainer:{
+        display: 'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        bottom:350
+    },
+    logo:{
+        width:200,
+        height:200
     }
 });
 

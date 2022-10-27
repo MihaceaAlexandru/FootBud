@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@artcoded/strapi-plugin-github-projects": "^1.0.5"
+    "@artcoded/strapi-plugin-github-projects": "^1.0.5",
+    "react-native-video": "^5.2.1"
   }
 }

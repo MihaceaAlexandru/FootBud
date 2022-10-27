@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text,Button, SliderBase} from 'react-native';
+import {View, Text,Button, Image} from 'react-native';
 import {style} from '../StyleSheet/FirstPageStyle';
 import SlidingUpPanel from 'rn-sliding-up-panel';
 import  AppButton  from '../Buttons/Button';
@@ -14,6 +14,9 @@ const FirstPage = ({navigation}) => {
     }  
     return (
       <View style={style.container}>
+        <View style={style.logoContainer}>  
+          <Image source={require('../assets/media/FootBudLogo.png')} style={style.logo}/>
+        </View>
         <View style={style.containerStart}>
           <View style={style.arrowThree}></View>
           <View style={style.arrowTwo}></View>
