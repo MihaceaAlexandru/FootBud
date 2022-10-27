@@ -12,7 +12,8 @@ import LogInPage from './Components/LogInPage';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './Components/Home';
-import MyComponent from './Components/Slide';
+import FirstPage from './Components/FirstPage';
+import {style} from '../Frontend/StyleSheet/AppStyle';
 
 import {
   SafeAreaView,
@@ -39,13 +40,13 @@ const App = () => {
 
   return (
         <Auth0Provider domain={"dev-4k2uv2aw.us.auth0.com"} clientId={"vET0Toex0cObbEirARKjdRu2UFaasO5U"}>
-            <NavigationContainer style={styles.sectionTitle}>
+            <NavigationContainer style={style.container}>
               <Stack.Navigator
                screenOptions={{
                 headerShown: false}}>
                 <Stack.Screen
-                  name="MyComponent"
-                  component={MyComponent}/>
+                  name="FirstPage"
+                  component={FirstPage}/>
                 <Stack.Screen 
                       name="Login" 
                       component={LogInPage} />
@@ -56,27 +57,7 @@ const App = () => {
               </Stack.Navigator>
           </NavigationContainer>
         </Auth0Provider>
-    
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
 
 export default App;

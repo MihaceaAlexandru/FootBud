@@ -1,20 +1,27 @@
 import { useRoute } from '@react-navigation/native';
 import React from 'react';
-import {Button, Text, View, StyleSheet} from 'react-native';
+import { useEffect,useState } from 'react';
+import {Button, Text, View, StyleSheet, Alert} from 'react-native';
 
-const Home = ({navigation}) => {
+const Home = ({ navigation}) => {
 
     const route = useRoute();
+    const [name, setName]=useState(null);
+
+
+    useEffect(()=>{
+        setName(route.params);
+    },[route.params])
 
     const pressHandle = () => {
         navigation.navigate('Login');
     }    
 
-    let nume = route.params.name !== null ? route.params.name : 'Nu are nume';
+    // const nume = route.params.name !== null ? route.params.name : 'Nu are nume';
 
     return(
         <View>
-            <Text style={styles.sectionContainer}>{nume}</Text>
+            <Text style={styles.sectionContainer}>{JSON.stringify(name)}</Text>
             <Button title={'Apasa'} onPress={pressHandle}/>
         </View>
     )
