@@ -82,7 +82,7 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::profil.profil",
-      "inversedBy": "user"
+      "mappedBy": "user"
     },
     "friend_ships": {
       "type": "relation",
