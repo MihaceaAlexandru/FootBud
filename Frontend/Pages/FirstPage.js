@@ -12,6 +12,7 @@ const FirstPage = ({navigation}) => {
     const pressHandle = () => {
         navigation.navigate('Login');
     }  
+    
     return (
       <View style={style.container}>
         <View style={style.logoContainer}>  

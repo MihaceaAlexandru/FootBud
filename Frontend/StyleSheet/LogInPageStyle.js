@@ -11,7 +11,7 @@ const style = StyleSheet.create({
         justifyContent:'center'
     },
     containerButtons: {
-        margin: 20
+        margin: 15
     }
 })
 

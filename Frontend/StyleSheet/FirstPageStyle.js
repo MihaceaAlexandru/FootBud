@@ -103,8 +103,8 @@ const style = StyleSheet.create({
         bottom:350
     },
     logo:{
-        width:200,
-        height:200
+        width:250,
+        height:250
     }
 });
 

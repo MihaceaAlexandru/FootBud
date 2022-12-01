@@ -1,27 +1,21 @@
 import React from 'react';
 import { useState, useEffect} from 'react';
-import {Alert, Button, Text, View} from 'react-native';
+import { View, Button, Text } from 'react-native';
 import {useAuth0} from 'react-native-auth0';
 import {style} from '../StyleSheet/LogInPageStyle';
 import AppButton from '../Buttons/Button';
 
 
-const baseUrl = 'http://localhost:1337/api';
-
-
+const baseUrl = 'http://localhost:1337/api/profils';
 
 const LogInPage = ({navigation}) => {
-    const {authorize, clearSession, user} = useAuth0();
-    const [profile, setProfile] = useState();
-
-    useEffect(() => {
-      setProfile(user);
-    },[user]);
-    
+  const {authorize, clearSession, user} = useAuth0();
+  const [whereTo, setWhereTo] = useState('');
+     
   const onLogin = async () => {
     try {
+      setWhereTo('MainPage');
       await authorize({scope: 'openid profile email'});
-        navigation.navigate('Home',profile);
     } catch (e) {
       console.log(e);
     }
@@ -29,9 +23,8 @@ const LogInPage = ({navigation}) => {
 
   const OnSignUp = async () => {
     try {
+      setWhereTo('SignUpPage')
       await authorize({mode: 'signUp'});
-      // console.log(user);
-      // navigation.navigate('Home',profile.name);
     } catch (e) {
       console.log(e);
     }
@@ -45,19 +38,30 @@ const LogInPage = ({navigation}) => {
     }
   };
 
-  const date = user !== null ? user.name : "Nu este nimeni logat!"
+  useEffect(()=>{
+    if(user !== null){
+      if(whereTo === 'MainPage'){
+        navigation.navigate('MainPage');
+      }else if(whereTo === 'SignUpPage'){
+        navigation.navigate('SignUpPage');
+      }
+    }
+    setWhereTo('');
+  },[user])
+
+  
     return(
        <View style={style.container}>
           <View style={style.containerButtons}>
             <AppButton onPress={OnSignUp} title='Sign Up' size="sm" backgroundColor="#1e2724"/>    
           </View>
           <View style={style.containerButtons}>
-          <AppButton onPress={onLogin} title='Log In' size="sm" backgroundColor="#1e2724"/>  
+            <AppButton onPress={onLogin} title='Log In' size="sm" backgroundColor="#1e2724"/>  
           </View>
         <Button onPress={onLogout} title={'LogOut'}></Button>
-        <Text>{date}</Text>
-        {/* <Text>{JSON.stringify(profile)}</Text> */}
-       </View>
+        <Text>{JSON.stringify(user)}</Text>
+        <Text>{whereTo}</Text>
+      </View>
     )    
 }
 

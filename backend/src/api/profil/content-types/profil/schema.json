@@ -4,17 +4,15 @@
   "info": {
     "singularName": "profil",
     "pluralName": "profils",
-    "displayName": "Profil"
+    "displayName": "Profil",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Level": {
-      "type": "integer"
-    },
-    "NumarJocuri": {
+    "NumberOfgames": {
       "type": "biginteger"
     },
     "lobby": {
@@ -28,6 +26,25 @@
       "relation": "oneToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "profil"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Name": {
+      "type": "string"
+    },
+    "City": {
+      "type": "string"
+    },
+    "Age": {
+      "type": "integer"
+    },
+    "Phone": {
+      "type": "float",
+      "unique": true
+    },
+    "Level": {
+      "type": "string"
     }
   }
 }

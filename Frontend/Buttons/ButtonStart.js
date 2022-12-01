@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
-import {style} from '../StyleSheet/FirstPageStyle'
+import { TouchableOpacity, Text } from "react-native";
+import {style} from '../StyleSheet/FirstPageStyle';
 
 
 const ButtonStart = ({ onPress, title }) => {
@@ -9,7 +9,6 @@ const ButtonStart = ({ onPress, title }) => {
             <Text style={style.btnStartText}>{title}</Text>
         </TouchableOpacity>
     )
-
 }
 
 export default ButtonStart;
